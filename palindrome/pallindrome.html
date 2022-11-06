@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@600&family=Nunito:wght@660&display=swap" rel="stylesheet">
+<style>
+  #cont{
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+    height: 20vh;
+  }
+
+  body{
+    font-family: 'Noto Sans Mono', monospace;
+    font-family: 'Nunito', sans-serif;
+
+  }
+
+  #conta{
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+    box-shadow: 0px 0px 30px 1px rgba(0 0 0 /99%);
+    border: none;
+    padding: 20px;
+    border-radius: 15px;
+
+  }
+
+  #inp{
+    font-family: 'Noto Sans Mono', monospace;
+    font-family: 'Nunito', sans-serif;
+
+    margin-top: 4vh;
+    height: 5vh;
+    border: none;
+    border-radius: 15px;
+    padding-inline-start: 15px;
+    color: rgb(204, 207, 255);
+    background-color: rgba(3, 19, 255,0.9);
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+
+  }
+  #inp:hover{
+  background-color: rgba(0, 0, 0, 0.65);
+  }
+
+  #btn{
+    font-family: 'Noto Sans Mono', monospace;
+    font-family: 'Nunito', sans-serif;
+
+    height: 5vh;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    background-color: #9d45f5;
+    background-color: rgba(195, 135, 255, 0.25);
+    backdrop-filter: blur(3px);
+
+  }
+
+  #btn:hover{
+    background-color: rgba(158, 63, 252, 0.55);
+    transition: 1s;
+  }
+
+  </style>
+    <title>pallindrome number checker</title>
+  </head>
+  <body>
+    <div id = "cont">
+      <div id = "conta">
+        <input type="number" name="hm" value="0" id = "inp">
+        <button id = "btn" type="button" onclick="btn()" name="button">Submit</button>
+      </div>
+    </div>
+    <script defer>
+      body = document.querySelector("body");
+      url = 'https://source.unsplash.com/'+String(window.innerWidth)+"x"+String(window.innerHeight)+'/?math'
+      body.style.backgroundImage = "url("+url+")"
+
+      function check(n){
+        n = String(n);
+        newS = "";
+        k = n.length;
+        for (i = k-1; i>=0; i--){
+          newS += n[i];
+        }
+        if (n == newS){
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+
+      function btn(){
+        z = document.getElementById("inp");
+        //alert(z.value)
+        if (z.value != ""){
+          res = check(z.value);
+          alert(res);
+        }
+      }
+
+    </script>
+  </body>
+</html>
